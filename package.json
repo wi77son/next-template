@@ -1,12 +1,18 @@
 {
-  "name": "next-template",
+  "name": "nextjs-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "check:eslint": "eslint --ext .jsx,.js,.tsx,.ts ./src",
+    "check:prettier": "prettier --check ./src",
+    "check": "run-p --continue-on-error check:*",
+    "fix": "run-s --continue-on-error fix:eslint fix:prettier",
+    "fix:eslint": "eslint --ext .jsx,.js,.tsx,.ts ./src --fix",
+    "fix:prettier": "prettier --write ./src",
+    "test": "jest"
   },
   "dependencies": {
     "@types/node": "20.3.3",
@@ -21,5 +27,37 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^9.3.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/testing-library__jest-dom": "^5.14.6",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import-access": "^1.1.2",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "eslint-plugin-sort-keys-custom-order": "^1.0.5",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "react-test-renderer": "^18.2.0",
+    "tailwind-variants": "^0.1.10",
+    "tailwindcss-radix-colors": "^0.5.0"
+  },
+  "volta": {
+    "node": "18.16.0",
+    "npm": "9.5.1"
   }
 }
