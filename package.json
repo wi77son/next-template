@@ -15,6 +15,12 @@
     "test": "jest",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run fix:eslint",
+      "npm run fix:prettier"
+    ]
+  },
   "dependencies": {
     "@types/node": "20.3.3",
     "@types/react": "18.2.14",
