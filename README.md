@@ -6,3 +6,8 @@
 - Prettier
 - Jest
 - Volta
+- npm
+
+```bash
+npx create-next-app --example https://github.com/Hetchma/next-template your-app-name
+```
